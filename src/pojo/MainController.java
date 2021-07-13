@@ -211,7 +211,7 @@ int n=xml.length();
 for(int i=0;i<n;i++){ 
     if(xml.charAt(i)=='<' && xml.charAt(i+1)=='/'){
         int s=xml.indexOf(c,i);
-        if(internal==0) sp-=2; 
+        if(internal==0) sp-=3; 
          if (line==1) //sameline
          out+=xml.substring(i,s+1)+"\n";
          else{
@@ -236,7 +236,7 @@ for(int i=0;i<n;i++){
             for(int j=0;j<sp;j++)
            out+=" " ; 
         out+=xml.substring(i,s+1);
-        sp+=2; i=s+1;
+        sp+=3; i=s+1;
          s=xml.indexOf('<',i); 
         if((xml.charAt(i)!='\n' && xml.charAt(i)!='<') || (xml.charAt(i)=='\n' &&xml.charAt(i+1)!='<' )&&xml.charAt(i+1)!='/'){ //closing tag in the same line or text
             line=1; 
