@@ -15,32 +15,6 @@
             <Font size="41.0" />
          </font>
       </Label>
-      <Pane layoutX="3.0" layoutY="151.0" prefHeight="495.0" prefWidth="115.0" style="-fx-border-color: yellow; -fx-background-color: snow;" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1066.0" AnchorPane.topAnchor="151.0">
-         <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="23.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#correctXML" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: MediumVioletRed;" text="Check Errors " textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="71.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#addXMLFormat" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: MediumVioletRed;" text="Add Format" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="118.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#minify" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: MediumVioletRed;" text="Apply Minify " textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="167.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#compress" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: MediumVioletRed;" text="Compress File" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="216.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#decompress" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: MediumVioletRed;" text="Decompress File " textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font name="System Bold Italic" size="11.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
       <ScrollPane layoutX="150.0" layoutY="10.0" prefHeight="576.0" prefWidth="545.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="70.0">
          <content>
             <TextFlow fx:id="tf" lineSpacing="2.0" prefHeight="857.0" prefWidth="1506.0" style="-fx-background-color: snow;" />
@@ -56,17 +30,51 @@
             <Font size="41.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#choosingXML" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: black;" text="Choose XML File" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="624.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1067.0" AnchorPane.topAnchor="5.0">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#save" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: Black;" text="Save Changes" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="574.8" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1067.0" AnchorPane.topAnchor="54.0">
+      <Pane layoutY="92.0" prefHeight="319.0" prefWidth="127.0" style="-fx-background-color: snow; -fx-border-color: yellow;" AnchorPane.bottomAnchor="261.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1058.0" AnchorPane.topAnchor="92.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="274.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#decompress" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: MediumVioletRed;" text="Decompress File " textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="231.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#compress" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: MediumVioletRed;" text="Compress File" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="187.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#convert_json" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: MediumVioletRed;" text="Convert to JSON" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="143.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#minify" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: MediumVioletRed;" text="Minify " textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="99.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#addXMLFormat" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: MediumVioletRed;" text="Add Format" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="56.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#correctXML" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: MediumVioletRed;" text="Check Errors " textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#choosingXML" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: MediumVioletRed;" text="Choose XML File" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#save" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: Black;" text="Save Changes" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="635.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1058.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="103.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#doExit" prefHeight="43.0" prefWidth="115.0" style="-fx-background-color: Black;" text="Exit" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="533.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1066.0" AnchorPane.topAnchor="103.0">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutY="54.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#doExit" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: Black;" text="Exit" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1058.0" AnchorPane.topAnchor="50.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
