@@ -518,5 +518,32 @@ for(int i=0;i<n;i++){
         }
  
  }
+    public void convert_json(ActionEvent a){
+    
+    if(filein){
+    
+    
+    String s= convert(str_in.toString());
+    tf.getChildren().clear();
+   tf.setStyle(" -fx-border-color: Yellow;");
+    Text t=new Text(s);
+    tf.getChildren().add(t);
+    
+    
+    
+    
+    }
+    else {
+    
+    
+     Alert alert = new Alert(AlertType.ERROR);
+         alert.setTitle("ERROR");
+               String s ="Please Enter XML File First";
+                      alert.setContentText(s);
+                alert.show();
+    
+    }
+    
+    }
   
 }
