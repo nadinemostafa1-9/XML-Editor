@@ -436,87 +436,54 @@ for(int i=0;i<n;i++){
  
  }
  
- public void decompress(ActionEvent a){
-      FileChooser filechooser=new FileChooser();
-       tf.setStyle(" -fx-border-color: Yellow;");
-     tf_in.setStyle(" -fx-border-color: Yellow;");
-        File file=filechooser.showOpenDialog(stage);
-        str_in=new StringBuilder();
-        stringbuilder=new StringBuilder();
-        
-          try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+ 	public void decompress(ActionEvent a) {
+ 		FileChooser filechooser = new FileChooser();
+		tf.setStyle("-fx-border-color: Yellow;");
+		tf_in.setStyle("-fx-border-color: Yellow;");
+		File file = filechooser.showOpenDialog(stage);
+		
+		tf.getChildren().clear();
+		tf_in.getChildren().clear();
+		filein = true;
+		
+		String decodedString = Encoder.readAndDecodeFile(file);
+		stringbuilder = new StringBuilder(decodedString);
+		Text t = new Text(decodedString);
+		t.setFill(Color.BLACK);
+		tf_in.getChildren().add(t);
+ 	}
 
-                        String line;
-                     while ((line = reader.readLine()) != null)
-                     { 
-                         str_in.append(line).append("\n");
-                     }
-                    
-                 } 
-             catch (IOException e) {
-                      Alert alert = new Alert(AlertType.ERROR);
-                      alert.setTitle("ERROR");
-                      String s =e.getMessage();
-                      alert.setContentText(s);
-                      alert.show();
-                 }
-                       
-
- tf.getChildren().clear();
- tf_in.getChildren().clear();
- filein=true;
- String stri=Encoder.Decode(str_in.toString());
- str_in.delete(0, str_in.length());
- str_in.append(stri);
- stringbuilder=str_in;
- Text t=new Text(stri);
- t.setFill(Color.BLACK);
- tf_in.getChildren().add(t);
- }
- public void compress(ActionEvent a){
- 
-
- String stri=Encoder.Encode(str_in.toString());
- if(filein){   FileChooser filechooser=new FileChooser();
-
-   File file=filechooser.showSaveDialog(stage);
-   if(file!=null && stri!=null){
-   if(!str_in.toString().isEmpty())
-   {savecontent(file,stri);
-   
-   
-    Alert alert = new Alert(AlertType.INFORMATION);
-         alert.setTitle("Compress Data");
-               String s ="Data Successfully Compressed.";
-                      alert.setContentText(s);
-                alert.show(); 
-   }
-   
-   
-   else {
-    Alert alert = new Alert(AlertType.ERROR);
-         alert.setTitle("ERROR");
-               String s ="There is a Problem in The compression process.";
-                      alert.setContentText(s);
-                alert.show();
-   
-   }
-   }
-        
-        
-        }
-     else {
-        
-         Alert alert = new Alert(AlertType.ERROR);
-         alert.setTitle("ERROR");
-               String s ="Please Choose XML File First";
-                      alert.setContentText(s);
-                alert.show();
-
-        
-        
-        }
- 
- }
-  
+	public void compress(ActionEvent a) {
+		String stri = Encoder.Encode(str_in.toString());
+		if (!filein) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("ERROR");
+			String s ="Please Choose XML File First";
+			alert.setContentText(s);
+			alert.show();
+			return;
+		}
+		
+		FileChooser filechooser = new FileChooser();
+		File file = filechooser.showSaveDialog(stage);
+		if (file == null || stri == null) {
+			return;
+		}
+		
+		if (str_in.toString().isEmpty()) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("ERROR");
+			String s ="There is a Problem in The compression process.";
+			alert.setContentText(s);
+            alert.show();
+            return;
+		}
+		
+		Encoder.writeBytes(file, stri);
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Compress Data");
+		String s ="Data Successfully Compressed.";
+		alert.setContentText(s);
+		alert.show();
+	}
 }
